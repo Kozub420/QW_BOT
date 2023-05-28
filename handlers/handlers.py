@@ -112,7 +112,8 @@ async def process_token_press(callback: CallbackQuery):
     await callback.message.edit_text(
                                 # callback.data = это токен выбранного кошелька
                                 text=info_profile(callback.from_user.id, callback.data),
-                                reply_markup=create_one_token_keyboard()
+                                reply_markup=create_one_token_keyboard(),
+                                parse_mode='HTML'
                                 )
     await callback.answer('Токен выбран!')
 
