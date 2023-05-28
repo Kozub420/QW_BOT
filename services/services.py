@@ -76,7 +76,7 @@ def info_profile(user_id: int, api_access_token: str):
     result = f'Название: {user_db[user_id][api_access_token]}\n'\
              f'Блокировка: {["⛔ что то не так","✅ все хорошо"][get_restrictions(api_access_token)==[]]}\n'\
              f'Токен: ***{api_access_token[-15:]}\n'\
-             f'Номер: {profile["authInfo"]["personId"]}\n'\
+             f'Номер: <code>{profile["authInfo"]["personId"]}</code>\n'\
              f'Баланс: {balance_two(api_access_token, profile["authInfo"]["personId"])["accounts"][0]["balance"]["amount"]} RUB\n'\
              f'Статус: {profile["contractInfo"]["identificationInfo"][0]["identificationLevel"]}\n'\
              f'Оператор: {profile["userInfo"]["operator"]}\n' \
